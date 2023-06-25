@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar class="rosado">
+    <ion-title>Mi primera app</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+<!--Imagen de login--> 
+  <ion-img src="assets/images/login.svg"></ion-img>
+<!--Usuario-->
+    <ion-item class="ion-margin-top">
+    <ion-label position="floating">Usuario</ion-label>
+    <ion-input placeholder="Ingrese su usuario" [(ngModel)]="modeloUsuario" ></ion-input>
+  </ion-item>
+<!--Contraseña-->
+  <ion-item>
+    <ion-label position="floating" >Contraseña</ion-label>
+    <ion-input placeholder="Ingrese su Contraseña" type="password" [(ngModel)]="modeloContrasena"  ></ion-input>
+  </ion-item>
+<!--Boton de iniciar sesion-->
+  <ion-button class="rosado" expand="block" routerLink="/principal">Iniciar sesion</ion-button>
+</ion-content>
