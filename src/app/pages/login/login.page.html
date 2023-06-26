@@ -1,14 +1,19 @@
 <ion-header>
-  <ion-toolbar class="rosado">
-    <ion-title>Mi primera app</ion-title>
+  <ion-toolbar class="btn">
+    <ion-title>Pokeamigos</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content >
+<ion-content  >
 <!--Imagen de login--> 
-  <ion-img src="assets/images/login.svg"></ion-img>
+<ion-item >
+  <ion-img src="assets/images/Pokeamigos.png"></ion-img>
+</ion-item>
+<ion-item >
+  <ion-img src="assets/images/Pokemon.svg"></ion-img>
+</ion-item>
 <!--Usuario-->
-    <ion-item class="ion-margin-top">
+    <ion-item >
     <ion-label position="floating">Usuario</ion-label>
     <ion-input placeholder="Ingrese su usuario" [(ngModel)]="modeloUsuario" ></ion-input>
   </ion-item>
@@ -18,5 +23,13 @@
     <ion-input placeholder="Ingrese su Contraseña" type="password" [(ngModel)]="modeloContrasena"  ></ion-input>
   </ion-item>
 <!--Boton de iniciar sesion-->
-  <ion-button class="rosado" expand="block" routerLink="/principal">Iniciar sesion</ion-button>
+  <ion-button class="btn" expand="block" routerLink="/principal">Iniciar sesion</ion-button>
+  <ion-item class="ion-text-center">
+    <p > ¿No tienes una cuenta? <a routerLink="/registro"> Regístrate </a> </p>
+  </ion-item>
+
+
+  
+
+
 </ion-content>

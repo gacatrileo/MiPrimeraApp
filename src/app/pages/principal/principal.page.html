@@ -1,13 +1,28 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>principal</ion-title>
-  </ion-toolbar>
-</ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content >
+  <ion-row>
+    <ion-col><ion-button size="6" class="btn btn-big" expand="block" size="large" >
+      <ion-icon name="download-outline"></ion-icon>Capturados</ion-button></ion-col>
+    <ion-col><ion-button size="6" class="btn btn-big" expand="block" size="large" routerLink="/pokedex">
+      <ion-icon name="search-outline"></ion-icon>Pokedex</ion-button></ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col><ion-button size="6" class="btn btn-big" expand="block" size="large" >
+      <ion-icon name="star-outline"></ion-icon> Favoritos</ion-button></ion-col>
+    <ion-col><ion-button size="6" class="btn btn-big" expand="block" size="large" routerLink="/perfil"> 
+      <ion-icon name="person-outline"></ion-icon>Mi perfil</ion-button></ion-col>
+  </ion-row>
+
+
+</ion-content>
+
+<ion-content>
+    <!--Cerrar sesion-->
   <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">principal</ion-title>
-    </ion-toolbar>
+    <ion-item>
+      <ion-button color="danger" size="small" routerLink="/login">Cerrar sesion</ion-button>
+    </ion-item>
+
   </ion-header>
 </ion-content>
+
