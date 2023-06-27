@@ -27,14 +27,6 @@
 
 /*Color de la interfaz*/
 
-.poke {
-    --background:#ff0000;
-    --color:#ffffff;
-
-    --background-hover: #0400ff;
-
-}
-
 .yellow {
     --background:#ffcc01;
 }
@@ -44,6 +36,7 @@
     --background: linear-gradient(101deg, rgba(2,0,36,1) 0%, rgba(29,20,108,1) 0%, rgba(136,78,40,1) 0%, rgba(137,101,133,1) 0%, rgba(85,85,134,1) 0%, rgba(0,82,255,1) 0%, rgba(255,0,0,1) 100%, rgba(100,94,149,1) 100%, rgba(167,68,97,1) 100%);
 
     --background-hover:  linear-gradient(101deg, rgba(2,0,36,1) 0%, rgba(29,20,108,1) 0%, rgba(136,78,40,1) 0%, rgba(137,101,133,1) 0%, rgba(255,0,0,1) 0%, rgba(167,68,68,1) 33%, rgba(0,82,255,1) 100%, rgba(255,0,0,1) 100%, rgba(100,94,149,1) 100%);
+    --color:#ffffff;
 }
 
 .btn-big {

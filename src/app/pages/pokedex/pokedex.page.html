@@ -1,9 +1,18 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>pokedex</ion-title>
-  </ion-toolbar>
-</ion-header>
+
 
 <ion-content >
+  <ion-item>
+    <ion-button routerLink="/principal" size="small">Volver</ion-button>
+  </ion-item>
+  <ion-item>
+    <ion-img src="assets/images/Pokedex.png"></ion-img>
+  </ion-item>  
+
+
+  <ion-list>
+    <ion-item *ngFor="let item of getdata">
+      <ion-label>{{item.entry_number}} {{item.pokemon_species.name | titlecase}}</ion-label>
+    </ion-item>
+  </ion-list>
 
 </ion-content>

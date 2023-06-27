@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { GetapiService } from '../../pokeApi/getapi.service';
+
 
 @Component({
   selector: 'app-pokedex',
@@ -7,7 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PokedexPage implements OnInit {
 
-  constructor() { }
+  getdata:any[]=[];
+
+  constructor( public _services: GetapiService) { 
+    this._services.getdata<any[]>("").subscribe(data =>{
+        this.getdata = Object.values(data)[5];
+        console.log(this.getdata);
+    })
+  }
 
   ngOnInit() {
   }
