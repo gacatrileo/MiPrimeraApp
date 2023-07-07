@@ -9,22 +9,7 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'login',
-    redirectTo: 'login',
-    pathMatch: 'full'
-  },
-  {
-    path: 'principal',
-    redirectTo: 'login',
-    pathMatch: 'full'
-  },
-  {
-    path: 'registro',
-    redirectTo: 'registro',
-    pathMatch: 'full'
-  },
-  {
-    path: 'pokemones',
+    path: 'perfil',
     redirectTo: 'login',
     pathMatch: 'full'
   },
@@ -34,19 +19,26 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'perfil',
+    path: 'pokemones',
     redirectTo: 'login',
     pathMatch: 'full'
   },
   {
-    path: 'pokedex',
+    path: 'registro',
+    redirectTo: 'registro',
+    pathMatch: 'full'
+  },
+  {
+    path: 'principal',
     redirectTo: 'login',
     pathMatch: 'full'
-  },  {
+  },
+  {
     path: '**',
     redirectTo: 'e404',
     pathMatch: 'full'
   },
+  
   {
     path: 'login',
     loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
@@ -78,7 +70,7 @@ const routes: Routes = [
   },
   {
     path: 'pokedex',
-    loadChildren: () => import('./pages/pokedex/pokedex.module').then( m => m.PokedexPageModule),
+    loadChildren: () => import('./pages/pokedex/pokedex.module').then( m => m.PokedexPageModule),    
     canActivate: [DbService]
   },
   {

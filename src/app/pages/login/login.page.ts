@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DbService } from 'src/app/servies/db.service';
 
 @Component({
   selector: 'app-login',
@@ -10,7 +11,7 @@ export class LoginPage implements OnInit {
   modeloUsuario: string = '';
   modeloContrasena: string ='';
 
-  constructor() { 
+  constructor(private dbService: DbService) { 
     console.log('Pagina Login Iniciada');
   }
 
