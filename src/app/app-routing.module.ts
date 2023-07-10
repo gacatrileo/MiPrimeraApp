@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { DbService } from './servies/db.service';
+import { NoIngresadoGuard } from './no-ingresado.guard';
+import { IngresadoGuard } from './ingresado.guard';
 
 const routes: Routes = [
   {
@@ -10,77 +12,44 @@ const routes: Routes = [
   },
   {
     path: 'login',
-    redirectTo: 'login',
-    pathMatch: 'full'
-  },
-  {
-    path: 'perfil',
-    redirectTo: 'login',
-    pathMatch: 'full'
-  },
-  {
-    path: 'favoritos',
-    redirectTo: 'login',
-    pathMatch: 'full'
-  },
-  {
-    path: 'pokemones',
-    redirectTo: 'login',
-    pathMatch: 'full'
-  },
-  {
-    path: 'registro',
-    redirectTo: 'registro',
-    pathMatch: 'full'
-  },
-  {
-    path: 'principal',
-    redirectTo: 'login',
-    pathMatch: 'full'
-  },
-  {
-    path: '**',
-    redirectTo: 'e404',
-    pathMatch: 'full'
-  },
-  
-  {
-    path: 'login',
-    loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
+    loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule),
+    canActivate: [NoIngresadoGuard]
   },
   {
     path: 'principal',
     loadChildren: () => import('./pages/principal/principal.module').then( m => m.PrincipalPageModule),
-    canActivate: [DbService]
+    canActivate: [IngresadoGuard]
   },
 
   {
     path: 'registro',
-    loadChildren: () => import('./pages/registro/registro.module').then( m => m.RegistroPageModule)
+    loadChildren: () => import('./pages/registro/registro.module').then( m => m.RegistroPageModule),
+    canActivate: [NoIngresadoGuard]
   },
   {
     path: 'pokemones',
     loadChildren: () => import('./pages/pokemones/pokemones.module').then( m => m.PokemonesPageModule),
-    canActivate: [DbService]
+    canActivate: [IngresadoGuard]
   },
   {
     path: 'favoritos',
     loadChildren: () => import('./pages/favoritos/favoritos.module').then( m => m.FavoritosPageModule),
-    canActivate: [DbService]
+    canActivate: [IngresadoGuard]
   },
   {
     path: 'perfil',
     loadChildren: () => import('./pages/perfil/perfil.module').then( m => m.PerfilPageModule),
-    canActivate: [DbService]
+    canActivate: [IngresadoGuard]
   },
   {
     path: 'pokedex',
     loadChildren: () => import('./pages/pokedex/pokedex.module').then( m => m.PokedexPageModule),    
-    canActivate: [DbService]
+    canActivate: [IngresadoGuard]
   },
   {
     path: 'e404',
-    loadChildren: () => import('./pages/e404/e404.module').then( m => m.E404PageModule)
+    loadChildren: () => import('./pages/e404/e404.module').then( m => m.E404PageModule),
+    canActivate: [IngresadoGuard]
   },
 ];
 

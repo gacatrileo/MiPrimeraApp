@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DbService } from 'src/app/servies/db.service';
-
+import { ToastController,NavController } from '@ionic/angular';
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
@@ -8,10 +8,10 @@ import { DbService } from 'src/app/servies/db.service';
 })
 export class LoginPage implements OnInit {
 
-  modeloUsuario: string = '';
+  modeloCorreo: string = '';
   modeloContrasena: string ='';
 
-  constructor(private dbService: DbService) { 
+  constructor(private dbService: DbService,private toastController: ToastController, public navCtrl: NavController) { 
     console.log('Pagina Login Iniciada');
   }
 
@@ -19,7 +19,35 @@ export class LoginPage implements OnInit {
   }
 
   validarCredenciales() {
-    console.log(this.modeloUsuario);
-    console.log(this.modeloContrasena);
+    this.dbService.ingresarLogin(this.modeloCorreo,this.modeloContrasena).then((data)=>{
+      if(data){
+        console.log('GCD: LOGUEADO');
+        this.loginToast();
+        localStorage.setItem('ingresado','true');
+        this.navCtrl.navigateRoot('principal');
+      }else{
+        console.log('GCD: NO EXISTE ESE USUARIO');
+        this.noExisteToast();
+      }    
+    });
   }
+
+  async noExisteToast() {
+    const toast = await this.toastController.create({
+      message: 'Usuario o contraseña incorrecta!',
+      duration: 2000,
+      position: 'top' 
+    });
+    toast.present();
+  } 
+
+  async loginToast() {
+    const toast = await this.toastController.create({
+      message: 'Logueado!',
+      duration: 2000,
+      position: 'top' 
+    });
+    toast.present();
+  } 
+
 }

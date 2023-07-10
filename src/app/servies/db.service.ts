@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { SQLite, SQLiteObject } from '@awesome-cordova-plugins/sqlite/ngx';
-
 @Injectable({
   providedIn: 'root'
 })
@@ -55,6 +54,23 @@ export class DbService {
     });
   }
 
+  ingresarLogin(correo: String, contrasena:String){
+    return this.sqlite.create({
+      name: 'datos.db',
+      location: 'default'
+    }).then((db: SQLiteObject) => {
+      return db.executeSql('SELECT * FROM USUARIO WHERE MAIL = ? AND CONTRASENA = ?', [correo, contrasena]).then((data)=>{
+        if (data.rows.item(0).CANTIDAD === 0){
+          return false; //NO EXISTE USUARIO
+        }
+        return true; // SE ENCONTRO USUARIO
+      }).catch(e =>{
+        return false; // FALLO CONSULTA
+      })
+    }).catch(e=>{
+      return false; // FALLO BASE DE DATOS
+    });
+  }
 
   canActivate(){
     this.router.navigate(['login']);

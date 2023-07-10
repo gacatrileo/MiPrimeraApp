@@ -3,6 +3,7 @@ import { RegistroPage } from './registro.page';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
+import { SQLite } from '@awesome-cordova-plugins/sqlite';
 
 describe('RegistroPage', () => {
   let component: RegistroPage;

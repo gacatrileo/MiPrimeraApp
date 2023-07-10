@@ -1,5 +1,7 @@
 
 <ion-content >
+
+
   <ion-row>
     <ion-col><ion-button size="6" class="btn btn-big" expand="block" size="large" >
       <ion-icon name="download-outline"></ion-icon>Capturados</ion-button></ion-col>
@@ -13,16 +15,9 @@
       <ion-icon name="person-outline"></ion-icon>Mi perfil</ion-button></ion-col>
   </ion-row>
 
+  <ion-item>
+    <ion-button (click)="cerrarSesion()" color="danger" size="small" routerLink="/login">Cerrar sesion</ion-button>
+  </ion-item>
 
-</ion-content>
-
-<ion-content>
-    <!--Cerrar sesion-->
-  <ion-header collapse="condense">
-    <ion-item>
-      <ion-button color="danger" size="small" routerLink="/login">Cerrar sesion</ion-button>
-    </ion-item>
-
-  </ion-header>
 </ion-content>
 
