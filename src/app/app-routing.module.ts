@@ -9,6 +9,11 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
+    path: 'login',
+    redirectTo: 'login',
+    pathMatch: 'full'
+  },
+  {
     path: 'perfil',
     redirectTo: 'login',
     pathMatch: 'full'

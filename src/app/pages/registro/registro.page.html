@@ -1,32 +1,20 @@
 <ion-content>
+  <ion-button class="btn" routerLink="/login">Volver</ion-button>
   <ion-img src="assets/images/Pokeregistro.png"></ion-img>
   <ion-list>
     <ion-list>
+
       <ion-item>
-        <ion-input label="Usuario" maxlength="20"  placeholder="Ingrese nombre de usuario"></ion-input>
+        <ion-input label="Correo" type="email" [(ngModel)]="modeloCorreo" placeholder="usuario@dominio"></ion-input>
       </ion-item>
-        <ion-item>
-          <ion-select aria-label="genero" interface="popover" placeholder="Seleccione su genero">
-            <ion-select-option value="homem">Hombre</ion-select-option>
-            <ion-select-option value="mulher">Mujer</ion-select-option>
-            <ion-select-option value="outro">Otros</ion-select-option>
-          </ion-select>
-        </ion-item>
-  
       <ion-item>
-        <ion-input label="Ingrese Contraseña" type="password" minlength="8" maxlength="15"  value="password"></ion-input>
+        <ion-input label="Contraseña" [(ngModel)]="modeloContrasena" placeholder="Ingrese nueva contraseña" type="password" minlength="8" maxlength="15"  value="password"></ion-input>
       </ion-item>
-  
-      <ion-item>
-        <ion-input label="Correo" type="email" placeholder="email@domain.com"></ion-input>
-      </ion-item>
-  
-      <ion-item>
-        <ion-input label="Telefono" type="tel" placeholder="888-888-8888"></ion-input>
-      </ion-item>
+
+
     </ion-list>
   </ion-list>
-  <ion-button class="btn" expand="block" routerLink="/login">Registrar</ion-button>
+  <ion-button (click)="almacenarUsuario()" class="btn" expand="block" >Registrar</ion-button>
 
 </ion-content>
 
