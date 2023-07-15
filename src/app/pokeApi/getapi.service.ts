@@ -6,14 +6,15 @@ import {HttpClient} from '@angular/common/http';
 })
 
 export class GetapiService {
+  baseUrl='https://pokeapi.co/api/v2'
 
   constructor( public _http: HttpClient) { 
 
   }
 
-  getdata<T> (url : string)
-  {
-    url = 'https://pokeapi.co/api/v2/pokedex/1';
-    return this._http.get<T[]>(url);
+  getPokemon (offset=0){
+    return this._http.get(`${this.baseUrl}/pokemon?offset=${offset}&limit=10`);
   }
+
+
 }
