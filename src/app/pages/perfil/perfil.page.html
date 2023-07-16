@@ -1,13 +1,21 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>perfil</ion-title>
+<ion-header>
+  <ion-toolbar class="btn">
+    
+    <ion-title ><ion-button routerLink="/principal"><ion-icon name="arrow-back-outline"></ion-icon></ion-button> </ion-title>
   </ion-toolbar>
-</ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">perfil</ion-title>
-    </ion-toolbar>
-  </ion-header>
-</ion-content>
+
+<ion-card>
+  <h1>Datos del usuario</h1>
+
+  <img alt="Silhouette of mountains" width="90%" src="./assets/images/perfil.png" />
+  <ion-card-header>
+    <ion-card-title>Gabriel Catrileo</ion-card-title>
+    <ion-card-subtitle>Entrenador Novato</ion-card-subtitle>
+  </ion-card-header>
+
+  <ion-card-content>
+    <ion-input>Usuario:a@a</ion-input>
+  </ion-card-content>
+</ion-card>
+</ion-header>

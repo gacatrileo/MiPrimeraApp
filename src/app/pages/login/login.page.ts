@@ -17,13 +17,14 @@ export class LoginPage implements OnInit {
 
   ngOnInit() {
   }
-
+//validador de correo y usuario//
   validarCredenciales() {
     this.dbService.ingresarLogin(this.modeloCorreo,this.modeloContrasena).then((data)=>{
       if(data){
         console.log('GCD: LOGUEADO');
         this.loginToast();
         localStorage.setItem('ingresado','true');
+        //redirige a pagina principal
         this.navCtrl.navigateRoot('principal');
       }else{
         console.log('GCD: NO EXISTE ESE USUARIO');
@@ -31,7 +32,7 @@ export class LoginPage implements OnInit {
       }    
     });
   }
-
+//Pop-up no existe
   async noExisteToast() {
     const toast = await this.toastController.create({
       message: 'Usuario o contraseña incorrecta!',
@@ -40,7 +41,7 @@ export class LoginPage implements OnInit {
     });
     toast.present();
   } 
-
+//Pop-up logueado
   async loginToast() {
     const toast = await this.toastController.create({
       message: 'Logueado!',

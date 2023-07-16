@@ -21,7 +21,6 @@ const routes: Routes = [
     loadChildren: () => import('./pages/principal/principal.module').then( m => m.PrincipalPageModule),
     canActivate: [IngresadoGuard]
   },
-
   {
     path: 'registro',
     loadChildren: () => import('./pages/registro/registro.module').then( m => m.RegistroPageModule),
@@ -45,7 +44,6 @@ const routes: Routes = [
   {
     path: 'pokedex',
     loadChildren: () => import('./pages/pokedex/pokedex.module').then( m => m.PokedexPageModule),    
-
     canActivate: [IngresadoGuard]
   },
   {

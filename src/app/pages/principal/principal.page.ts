@@ -12,9 +12,10 @@ export class PrincipalPage implements OnInit {
 
   ngOnInit() {
   }
-
+//se elimina lo que estaba en el local storage(ingresado)
   cerrarSesion(){
     localStorage.removeItem('ingresado');
+    //redirige al login
     this.navCtrl.navigateRoot('login');
   }
 

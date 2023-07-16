@@ -1,9 +1,11 @@
-
+<ion-header>
+  <ion-toolbar class="btn">
+    
+    <ion-title ><ion-button routerLink="/principal"><ion-icon name="arrow-back-outline"></ion-icon></ion-button> </ion-title>
+  </ion-toolbar>
+</ion-header>
 
 <ion-content >
-  <ion-item>
-    <ion-button routerLink="/principal" size="small">Volver</ion-button>
-  </ion-item>
   <ion-item>
     <ion-img src="assets/images/Pokedex.png"></ion-img>
   </ion-item>  
@@ -11,13 +13,14 @@
 
   <ion-searchbar></ion-searchbar>
 
-  <!--
+
   <ion-list>
-    <ion-item *ngFor="let item of getdata">
-      <ion-label>{{item.entry_number}} {{item.pokemon_species.name | titlecase}}</ion-label>
+    <ion-item *ngFor="let item of getdata" routerLink="/pokemones">
+      <ion-label>25 - {{item.name | titlecase}}</ion-label>
     </ion-item>
   </ion-list>
-  -->
 
+
+  
   
 </ion-content>

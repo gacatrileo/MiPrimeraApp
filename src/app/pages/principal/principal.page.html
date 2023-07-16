@@ -1,23 +1,23 @@
-
 <ion-content >
 
 
   <ion-row>
-    <ion-col><ion-button size="6" class="btn btn-big" expand="block" size="large" >
-      <ion-icon name="download-outline"></ion-icon>Capturados</ion-button></ion-col>
-    <ion-col><ion-button size="6" class="btn btn-big" expand="block" size="large" routerLink="/pokedex">
-      <ion-icon name="search-outline"></ion-icon>Pokedex</ion-button></ion-col>
+    <ion-col><ion-button size="12" class="btn btn-big" expand="block" size="large" routerLink="/favoritos">
+      <ion-icon name="star-outline"> </ion-icon> Favoritos</ion-button></ion-col>
+    </ion-row>
+    <ion-row>
+    <ion-col><ion-button size="12" class="btn btn-big" expand="block" size="large" routerLink="/pokedex">
+      <ion-icon name="search-outline"> </ion-icon> Pokedex</ion-button></ion-col>
   </ion-row>
   <ion-row>
-    <ion-col><ion-button size="6" class="btn btn-big" expand="block" size="large" >
-      <ion-icon name="star-outline"></ion-icon> Favoritos</ion-button></ion-col>
-    <ion-col><ion-button size="6" class="btn btn-big" expand="block" size="large" routerLink="/perfil"> 
-      <ion-icon name="person-outline"></ion-icon>Mi perfil</ion-button></ion-col>
-  </ion-row>
+    <ion-col><ion-button size="12" class="btn btn-big" expand="block" size="large" routerLink="/perfil"> 
+      <ion-icon name="person-outline"> </ion-icon> Mi perfil</ion-button></ion-col>
 
-  <ion-item>
-    <ion-button (click)="cerrarSesion()" color="danger" size="small" routerLink="/login">Cerrar sesion</ion-button>
-  </ion-item>
+    </ion-row>
+    <ion-row>
+      <ion-col><ion-button (click)="cerrarSesion()" size="12" color="danger" expand="block" size="large" routerLink="/login">
+        <ion-icon name="power-outline"> </ion-icon> Cerrar Sesion</ion-button></ion-col>
+  </ion-row>
 
 </ion-content>
 

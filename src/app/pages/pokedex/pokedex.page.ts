@@ -10,22 +10,31 @@ import { GetapiService } from '../../pokeApi/getapi.service';
 })
 export class PokedexPage implements OnInit {
 
-  offset=0;
-  constructor( private getapiService: GetapiService) { 
+  //offset=0;
+  getdata:any[]=[{'name': 'pikachu'}];
 
+  constructor( private getapiService: GetapiService) { 
+    
+    this.getapiService.getdataPoke<any[]>("").subscribe(data =>{
+      console.log(data);
+      this.getdata = Object.values(data)[5];
+      console.log(this.getdata);
+  })
   }
 
   ngOnInit() {
-    this.loadPokemon();
+    this.getapiService.getDummy();
+    //this.loadPokemon();
   }
 
+  /*
   loadPokemon(){
     console.log('GCD: ressdfhhhhult: ')
     this.getapiService.getPokemon(this.offset).subscribe(res =>{
-      console.log('GCD: result!!!!');
-      console.log('GCD: result: ', res);
+      console.log('GCD: result: ', res)
     });
+   
   }
-
+ */
 
 }
